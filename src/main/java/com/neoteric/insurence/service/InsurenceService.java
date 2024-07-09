@@ -11,7 +11,7 @@ public class InsurenceService {
 
         InsurenceForm form =null;
 
-        if (insurence.age>20 && insurence.age<50){
+        if (insurence.age>6 && insurence.age<70){
 
             form=new InsurenceForm();
             form.insurenceName=insurence.insurenceName;
