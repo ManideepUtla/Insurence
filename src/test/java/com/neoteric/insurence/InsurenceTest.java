@@ -14,7 +14,7 @@ public class InsurenceTest {
         Insurence insurence= new Insurence();
         insurence.firstName="Manideep";
         insurence.lastName="Utla";
-        insurence.age=22;
+        insurence.age=10;
         insurence.mobileNo="9985533134";
         insurence.dateOfBirth="30-10-2002";
         insurence.city="Rajahmundry";
@@ -28,6 +28,31 @@ public class InsurenceTest {
         InsurenceForm form=service.getinsurence(insurence);
         Assertions.assertEquals(10000,insurence.price);
         Assertions.assertNotNull(insurence.insurenceName);
+
+
+
+    }
+
+    @Test
+
+    public void insurenceTestNegative(){
+        Insurence insurence= new Insurence();
+        insurence.firstName="Manideep";
+        insurence.lastName="Utla";
+        insurence.age=22;
+        insurence.mobileNo="9985533134";
+        insurence.dateOfBirth="30-10-2002";
+        insurence.city="Rajahmundry";
+        insurence.insurenceName="HealthInsurence";
+        insurence.price=10000;
+
+
+        InsurenceService service=new InsurenceService();
+        service.getinsurence(insurence);
+
+        InsurenceForm form=service.getinsurence(insurence);
+        //Assertions.assertEquals(10000,insurence.price);
+        Assertions.assertNull(form);
 
 
 
